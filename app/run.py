@@ -7,7 +7,7 @@ from nltk.tokenize import word_tokenize
 
 from flask import Flask
 from flask import render_template, request, jsonify
-from plotly.graph_objs import Bar
+from plotly.graph_objs import Bar, Barpolar
 import joblib
 from sqlalchemy import create_engine
 
@@ -44,7 +44,14 @@ def index():
     genre_names = list(genre_counts.index)
     
     # create visuals
-    # TODO: Below is an example - modify to create your own visuals
+    category_names = df.iloc[:, 4:].columns
+    categoy_counts = df.iloc[:, 4:].sum().values
+
+
+    top_categories = df.iloc[:, 4:].sum().sort_values(ascending=False)[0:11]
+    top_categories_counts = top_categories.values
+    top_categories_names = list(top_categories.index)
+
     graphs = [
         {
             'data': [
@@ -61,6 +68,42 @@ def index():
                 },
                 'xaxis': {
                     'title': "Genre"
+                }
+            }
+        },
+        {
+            'data': [
+                Bar(
+                    x=category_names,
+                    y=categoy_counts
+                )
+            ],
+
+            'layout': {
+                'title': 'Message Categories distribution',
+                'yaxis': {
+                    'title': "Count"
+                },
+                'xaxis': {
+                    'title': "Categories"
+                }
+            }
+        },
+        {
+            'data': [
+                Barpolar(
+                    theta=top_categories_names,
+                    r=top_categories_counts
+                )
+            ],
+
+            'layout': {
+                'title': 'Top 10 Categories',
+                'yaxis': {
+                    'title': "Count"
+                },
+                'xaxis': {
+                    'title': "Categories"
                 }
             }
         }
