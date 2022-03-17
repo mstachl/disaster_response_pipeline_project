@@ -52,7 +52,16 @@ There is a notebook available here focused on data retreival, data cleaning and 
 
 ## Screenshots <a name="screenshots"></a>
 
+1. Entering a message
+![image](https://user-images.githubusercontent.com/8439378/158881037-45c3c6d1-c441-4882-99ba-dc11012e2fea.png)
+
+2. Obtain the predicted message
+![image](https://user-images.githubusercontent.com/8439378/158881177-406120f8-7da0-4276-b3f0-48514e577f08.png)
+
+3. Visualization of training data
+![image](https://user-images.githubusercontent.com/8439378/158881647-f9aca699-1afa-4f56-8c58-0461978f03cd.png)
+![image](https://user-images.githubusercontent.com/8439378/158881734-fd6ded3e-5c0a-4316-a437-a48192395406.png)
+![image](https://user-images.githubusercontent.com/8439378/158881865-1fc71788-b686-472c-b229-8ee19bce3a66.png)
 
 ## Licensing, Authors, and Acknowledgements<a name="licensing"></a>
-<b>Packages</b>: Pandas, Matplotlib, GeoPandas, json
 
