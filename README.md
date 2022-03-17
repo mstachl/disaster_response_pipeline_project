@@ -10,9 +10,20 @@
 
 ## Installation <a name="installation"></a>
 
-There should be no necessary libraries to run the code here beyond the Anaconda distribution of Python.  The code should run with no issues using Python versions 3.*.
+The project can be easily built in an Anaconda environment using the given `requirements.txt` and with `conda create --name <env> --file requirements.txt`.
+
+### Dependencies
+
+The project uses the following libraries:
+- Python 3.9.7
+- Machine Learning: NumPy, SciPy, Pandas, Sciki-Learn
+- Natural Language Processing: NLTK
+- SQLlite Database: SQLalchemy
+- Web Development: Flask
+- Visualization: Plotly
 
 ### Instructions:
+
 1. Run the following commands in the project's root directory to set up your database and model.
 
     - To run ETL pipeline that cleans data and stores in database
@@ -27,6 +38,13 @@ There should be no necessary libraries to run the code here beyond the Anaconda 
 
 ## Project Motivation<a name="motivation"></a>
 
+This project focuses on message analysis in response to real-world disasters. I built a Natural Language Processing tool that categorizes the messages into disaster types. The labeled dataset was provided by https://appen.com/ (previously Figure Eight).
+
+The project is divided in the following steps:
+
+- ETL Pipeline to extract data from source, process and clean the data and save them in an SQLite database
+- Machine Learning Pipeline to train a NLP model using the Adaboost classifier to categorize messages
+- Web dashboard to visualize the dataset and perform real-time predictions on new messages.
 
 ## File Descriptions <a name="files"></a>
 
