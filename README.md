@@ -46,9 +46,18 @@ The project is divided in the following steps:
 - Machine Learning Pipeline to train a NLP model using the Adaboost classifier to categorize messages
 - Web dashboard to visualize the dataset and perform real-time predictions on new messages.
 
+## Limitations
+
+Not all categories in the dataset are represented equally. Some categories, e.g. `child_alone`, `shops` or `tools` only contain a handful of categorized training messages. This might lead to misclassification of certain messages due to underfitting.
+
 ## File Descriptions <a name="files"></a>
 
-There is a notebook available here focused on data retreival, data cleaning and exploratory data analysis.
+- model: 
+    - `train_classifier.py`: The NLP pipeline producing a Adaboost model `classifier.pkl`
+- data:
+    - `process_data.py`: The ETL pipeline to read, clean two excel-files and load them into a joind SQLite database `DisasterResponse.db`
+- app:
+    - `run.py`: Process to locally start the Flask dashboard
 
 ## Screenshots <a name="screenshots"></a>
 
@@ -63,5 +72,8 @@ There is a notebook available here focused on data retreival, data cleaning and 
 ![image](https://user-images.githubusercontent.com/8439378/158881734-fd6ded3e-5c0a-4316-a437-a48192395406.png)
 ![image](https://user-images.githubusercontent.com/8439378/158881865-1fc71788-b686-472c-b229-8ee19bce3a66.png)
 
-## Licensing, Authors, and Acknowledgements<a name="licensing"></a>
+## Acknowledgements and appeal<a name="licensing"></a>
 
+- I want to thank https://appen.com/ for providing the dataset..
+- If you find yourself in a dangerous situation, natural disaster or similar, please reach out to dedicated help centers. For disaster assistance in Germany, reach out to https://www.bmi.bund.de/EN/topics/civil-protection/bbk/bbk-node.html.
+- License: MIT
