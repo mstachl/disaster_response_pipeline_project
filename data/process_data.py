@@ -67,6 +67,10 @@ def clean_data(df):
     df = df.drop(columns=["categories"])
     df = df.join(categories)
     
+    # drop non-binary category values
+    for column in categories:
+        df = df[df[column].isin([0,1])]
+    
     # drop duplicates
     df.drop_duplicates(inplace=True)
     return df
@@ -91,7 +95,7 @@ def save_data(df, database_filename):
     """
     sqlite_db = 'sqlite:///' + database_filename
     engine = create_engine(sqlite_db)
-    df.to_sql('Messages', engine, index=False)  
+    df.to_sql('Messages', engine, index=False, if_exists="replace")  
 
 
 def main():
