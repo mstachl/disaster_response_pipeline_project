@@ -50,7 +50,7 @@ The project is divided in the following steps:
 
 There is a notebook available here focused on data retreival, data cleaning and exploratory data analysis.
 
-## Screenshots <a name="screenshots></a>
+## Screenshots <a name="screenshots"></a>
 
 
 ## Licensing, Authors, and Acknowledgements<a name="licensing"></a>
